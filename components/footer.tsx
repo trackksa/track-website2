@@ -15,11 +15,12 @@ import { useLanguage } from "@/app/context/LanguageContext";
 const Footer = () => {
   const { language } = useLanguage();
   const t = content[language];
+  const isArabic = language === "ar";
+
   const services = [
     { name: t.footer.services.event, href: "#services" },
     { name: t.footer.services.audio, href: "#services" },
     { name: t.footer.services.visual, href: "#services" },
-    { name: t.footer.services.photo, href: "#services" },
   ];
 
   const quickLinks = [
@@ -37,13 +38,16 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+    <footer
+      dir={isArabic ? "rtl" : "ltr"}
+      className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white"
+    >
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-400 bg-clip-text text-transparent mb-4">
                 {t.footer.companyName}
               </h3>
               <p className="text-slate-300 leading-relaxed mb-6 max-w-md">
@@ -78,7 +82,9 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     href={service.href}
-                    className="text-slate-300 hover:text-emerald-400 transition-colors duration-200 hover:translate-x-1 transform inline-block"
+                    className={`text-slate-300 hover:text-emerald-400 transition-colors duration-200 transform inline-block ${
+                      isArabic ? "hover:-translate-x-1" : "hover:translate-x-1"
+                    }`}
                   >
                     {service.name}
                   </Link>
@@ -97,7 +103,9 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-slate-300 hover:text-emerald-400 transition-colors duration-200 hover:translate-x-1 transform inline-block"
+                    className={`text-slate-300 hover:text-emerald-400 transition-colors duration-200 transform inline-block ${
+                      isArabic ? "hover:-translate-x-1" : "hover:translate-x-1"
+                    }`}
                   >
                     {link.name}
                   </Link>
@@ -109,9 +117,15 @@ const Footer = () => {
 
         {/* Social Media & Newsletter */}
         <div className="mt-12 pt-8 border-t border-slate-700">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div
+            className={`flex flex-col md:flex-row justify-between items-center gap-6 ${
+              isArabic ? "md:flex-row-reverse" : ""
+            }`}
+          >
             <div className="flex items-center gap-6">
-              <span className="text-slate-300 font-medium">Follow Us:</span>
+              <span className="text-slate-300 font-medium">
+                {isArabic ? "تابعنا على:" : "Follow Us:"}
+              </span>
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
@@ -133,13 +147,17 @@ const Footer = () => {
 
         {/* Bottom Footer */}
         <div className="mt-8 pt-8 border-t border-slate-700">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div
+            className={`flex flex-col md:flex-row justify-between items-center gap-4 ${
+              isArabic ? "md:flex-row-reverse text-right" : ""
+            }`}
+          >
             <p className="text-slate-400 text-sm">
-              © {new Date().getFullYear()} {t.footer.companyName}. All rights
-              reserved.
+              © {new Date().getFullYear()} {t.footer.companyName}.{" "}
+              {isArabic ? "جميع الحقوق محفوظة." : "All rights reserved."}
             </p>
-            <p className="text-slate-400/50 text-sm text-center md:text-right">
-              Developed by{" "}
+            <p className="text-slate-400/50 text-sm">
+              {isArabic ? "تم التطوير بواسطة" : "Developed by"}{" "}
               <Link
                 href="https://www.alogza.com"
                 target="_blank"
@@ -147,7 +165,7 @@ const Footer = () => {
                 className="text-emerald-400 hover:underline"
               >
                 Alogza
-              </Link>{" "}
+              </Link>
             </p>
           </div>
         </div>

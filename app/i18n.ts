@@ -394,19 +394,18 @@ export const content = {
     }
   },
   footer: {
-  companyName: "Creative Studio",
-  description: "We are a creative production company specializing in event coverage, audio-visual production, and photography services. Bringing your vision to life with professional excellence.",
+  companyName: "Track",
+  description: "A specialized company in audio and visual content production, committed to delivering exceptional quality through a team of seasoned experts and industry professionals.",
   contact: {
-    email: "hello@creativestudio.com",
-    phone: "+1 (555) 123-4567",
-    address: "123 Creative Street, Studio City, CA 90210"
+    email: "info@trackksa.com",
+    phone: "+966556611173",
+    address: "Riyadh, Prince Bandar Bin Abdulaziz Street"
   },
   servicesTitle: "Our Services",
   services: {
     event: "Event Coverage",
     audio: "Audio Production",
     visual: "Visual Production",
-    photo: "Photography"
   },
   quickLinksTitle: "Quick Links",
   quickLinks: {
@@ -815,19 +814,18 @@ export const content = {
     }
   },
   footer: {
-  companyName: "ستوديو الإبداع",
-  description: "نحن شركة إنتاج إبداعية متخصصة في تغطية الفعاليات، والإنتاج السمعي البصري، وخدمات التصوير الفوتوغرافي. نجعل رؤيتك تنبض بالحياة باحترافية عالية.",
+  companyName: "تراك",
+  description: "شركة متخصصة في إنتاج المحتوى المرئي والمسموع بمعايير احترافية من خبراء وتخصصين في المجال الفني.",
   contact: {
-    email: "hello@creativestudio.com",
-    phone: "+1 (555) 123-4567",
-    address: "123 شارع الإبداع، ستوديو سيتي، كاليفورنيا 90210"
+    email: "info@trackksa.com",
+    phone: "+966556611173",
+    address: "الرياض، شارع الأمير بندر بن عبدالعزيز"
   },
   servicesTitle: "خدماتنا",
   services: {
     event: "تغطية الفعاليات",
     audio: "إنتاج صوتي",
     visual: "إنتاج مرئي",
-    photo: "تصوير فوتوغرافي"
   },
   quickLinksTitle: "روابط سريعة",
   quickLinks: {

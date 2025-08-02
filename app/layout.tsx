@@ -6,9 +6,8 @@ import ClientLayout from "@/components/client-nav"; // This will hold Navbar and
 import { LanguageProvider } from "./context/LanguageContext";
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.dev",
+  title: "Trackksa",
+  description: "A specialized company in audio and visual content production, committed to delivering exceptional quality through a team of seasoned experts and industry professionals.",
 };
 
 export default function RootLayout({

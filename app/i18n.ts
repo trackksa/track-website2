@@ -79,9 +79,12 @@ export const content = {
       title: "Let's Create Together",
       subtitle: "Ready to bring your vision to life?",
       contactInfo: {
-        email: "hub@trak.com",
-        phone: "+1 (305) 123-4567",
-        location: "Creative District"
+        titleemail: "Email",
+        email: "info@trakksa.com",
+        titlephone: "Phone",
+        phone: "+966556611173",
+        titlelocation: "Location",
+        location: "Riyadh, Prince Bandar Bin Abdulaziz Street"
       },
       form: {
         namePlaceholder: "Your Name",
@@ -354,9 +357,12 @@ export const content = {
       heading: "Get in Touch",
       description: "We're here to help bring your vision to life.",
       contactInfo: {
-        email: "hello@track.com",
-        phone: "+1 (555) 123-4567",
-        location: "Creative District"
+        titleemail: "Email",
+        email: "info@trakksa.com",
+        titlephone: "Phone",
+        phone: "+966556611173",
+        titlelocation: "Location",
+        location: "Riyadh, Prince Bandar Bin Abdulaziz Street"
       },
       form: {
         namePlaceholder: "Your Name",
@@ -384,7 +390,7 @@ export const content = {
       methods: [
 {
           type: "Call Now",
-          value: "771794448"
+          value: "+966556611173"
         },
 {
           type: "WhatsApp",
@@ -409,10 +415,11 @@ export const content = {
   },
   quickLinksTitle: "Quick Links",
   quickLinks: {
-    about: "About Us",
-    work: "Our Work",
-    clients: "Clients",
-    blog: "Blog"
+      home: "Home",
+      services: "Services",
+      portfolio: "Portfolio",
+      about: "About",
+      contact: "Contact",
   }
 }
 
@@ -504,9 +511,12 @@ export const content = {
       title: "لنبدع معًا",
       subtitle: "هل أنت مستعد لتحويل رؤيتك إلى واقع؟",
       contactInfo: {
-        email: "hub@trak.com",
-        phone: "+1 (305) 123-4567",
-        location: "حي الإبداع"
+        titleemail: "بريدنا الالكتروني",
+        email: "info@trakksa.com",
+        titlephone: "هاتفنا",
+        phone: "+966556611173",
+        titlelocation: "موقعنا",
+        location: "الرياض، شارع الأمير بندر بن عبدالعزيز"
       },
       form: {
         namePlaceholder: "اسمك",
@@ -774,9 +784,12 @@ export const content = {
       heading: "ابقَ على تواصل",
       description: "نحن هنا لمساعدتك في تحويل رؤيتك إلى واقع.",
       contactInfo: {
-        email: "hello@track.com",
-        phone: "+1 (555) 123-4567",
-        location: "حي الإبداع"
+        titleemail: "بريدنا الالكتروني",
+        email: "info@trakksa.com",
+        titlephone: "هاتفنا",
+        phone: "+966556611173",
+        titlelocation: "موقعنا",
+        location: "الرياض، شارع الأمير بندر بن عبدالعزيز"
       },
       form: {
         namePlaceholder: "اسمك",
@@ -804,7 +817,7 @@ export const content = {
       methods: [
 {
           type: "اتصل الآن",
-          value: "771794448"
+          value: "+966556611173"
         },
 {
           type: "واتساب",
@@ -829,10 +842,11 @@ export const content = {
   },
   quickLinksTitle: "روابط سريعة",
   quickLinks: {
-    about: "من نحن",
-    work: "أعمالنا",
-    clients: "العملاء",
-    blog: "المدونة"
+      home: "الرئيسية",
+      services: "الخدمات",
+      portfolio: "المعرض",
+      about: "عنا",
+      contact: "التواصل",
   }
 }
 

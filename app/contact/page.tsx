@@ -75,17 +75,17 @@ export default function ContactPage() {
               {[
                 {
                   icon: Mail,
-                  title: t.contact.getInTouch.contactInfo.email,
+                  title: t.contact.getInTouch.contactInfo.titleemail,
                   value: t.contact.getInTouch.contactInfo.email,
                 },
                 {
                   icon: Phone,
-                  title: t.contact.getInTouch.contactInfo.phone,
+                  title: t.contact.getInTouch.contactInfo.titlephone,
                   value: t.contact.getInTouch.contactInfo.phone,
                 },
                 {
                   icon: MapPin,
-                  title: t.contact.getInTouch.contactInfo.location,
+                  title: t.contact.getInTouch.contactInfo.titlelocation,
                   value: t.contact.getInTouch.contactInfo.location,
                 },
               ].map((item, index) => (
@@ -226,7 +226,7 @@ export default function ContactPage() {
                     href={
                       method.type === "Call Now" || method.type === "اتصل الآن"
                         ? `tel:${method.value}`
-                        : "https://wa.me/967771794448"
+                        : "https://wa.me/966556611173"
                     }
                     target={
                       method.type === "Call Now" || method.type === "اتصل الآن"
@@ -235,7 +235,7 @@ export default function ContactPage() {
                     }
                     rel="noopener noreferrer"
                     style={{
-                      backgroundColor: i === 0 ? "#5a9e9d" : "#d03a82",
+                      backgroundColor: i === 0 ? "#28bba4" : "#28bba4",
                     }}
                     className="text-white p-6 rounded-2xl text-center hover:opacity-90 transition-all duration-300 group flex flex-col items-center justify-center"
                   >

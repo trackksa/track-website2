@@ -91,7 +91,7 @@ export default function HeaderPage({
             }`}
           >
             <h1
-              className={`text-4xl sm:text-5xl font-extralight lg:text-7xl font-bold text-white leading-tight transition-all duration-1000 delay-200 ${
+              className={`pt-20 text-4xl sm:text-5xl font-extralight lg:text-7xl font-bold text-white leading-tight transition-all duration-1000 delay-200 ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-8 opacity-0"

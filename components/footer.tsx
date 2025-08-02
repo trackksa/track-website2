@@ -24,10 +24,11 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: t.footer.quickLinks.about, href: "#about" },
-    { name: t.footer.quickLinks.work, href: "#portfolio" },
-    { name: t.footer.quickLinks.clients, href: "#clients" },
-    { name: t.footer.quickLinks.blog, href: "#blog" },
+    { name: t.footer.quickLinks.home, href: "/" },
+    { name: t.footer.quickLinks.services, href: "/services" },
+    { name: t.footer.quickLinks.portfolio, href: "/jobs" },
+    { name: t.footer.quickLinks.about, href: "/about" },
+    { name: t.footer.quickLinks.contact, href: "/contact" },
   ];
 
   const socialLinks = [

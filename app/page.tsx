@@ -52,7 +52,7 @@ export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [projects, setProjects] = useState<Project[]>([]);
   const { language } = useLanguage();
-  
+
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
@@ -184,7 +184,13 @@ export default function HomePage() {
             </div> */}
 
             {/* Revolutionary Title */}
-            <h1 className={`text-5xl md:text-7xl  font-extralight mb-8 tracking-tighter leading-none animate-in fade-in-0 slide-in-from-bottom-6 duration-1000 delay-200 inline-block bg-gradient-to-r from-gray-900 via-[#28bba4] to-[#28bba4] bg-clip-text text-transparent ${language === "ar" ? "lg:text-8xl  max-sm:h-[60px] h-[120px]" : "lg:text-9xl"}`}>
+            <h1
+              className={`text-5xl md:text-7xl  font-extralight mb-8 tracking-tighter leading-none animate-in fade-in-0 slide-in-from-bottom-6 duration-1000 delay-200 inline-block bg-gradient-to-r from-gray-900 via-[#28bba4] to-[#28bba4] bg-clip-text text-transparent ${
+                language === "ar"
+                  ? "lg:text-8xl  max-sm:h-[60px] h-[120px]"
+                  : "lg:text-9xl"
+              }`}
+            >
               {/* <span
                 className="inline-block bg-gradient-to-r from-gray-900 via-[#28bba4] to-[#28bba4] bg-clip-text text-transparent"
                 style={{
@@ -576,86 +582,122 @@ export default function HomePage() {
       {/* Enhanced Contact Section */}
       <section
         id="contact"
+        dir={language === "ar" ? "rtl" : "ltr"}
         className="py-32 bg-gradient-to-b from-gray-50/50 to-white relative transition-all duration-1000"
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl md:text-7xl font-extralight text-gray-900 mb-8 tracking-tighter transition-all duration-700 hover:scale-105">
+            <h2 className="text-5xl md:text-7xl font-extralight text-gray-900 mb-8 tracking-tighter">
               <span className="bg-gradient-to-r from-gray-900 to-[#28bba4] bg-clip-text text-transparent">
                 {t.home.contact.title}
               </span>
             </h2>
-            <p className="text-xl text-gray-600 mb-20 font-light transition-all duration-500 hover:text-gray-700">
+            <p className="text-xl text-gray-600 mb-20 font-light">
               {t.home.contact.subtitle}
             </p>
 
-            <div className="grid md:grid-cols-2 gap-16">
-              {/* Contact Info */}
-              <div className="space-y-8">
+            <div
+              className={`grid md:grid-cols-2 gap-16 ${
+                language === "ar" ? "flex-row-reverse" : ""
+              }`}
+            >
+              {/* Contact Info Cards */}
+              <div className="space-y-6">
                 {[
-                  { icon: Mail, title: "Email", value: "hello@track.com" },
-                  { icon: Phone, title: "Phone", value: "+1 (555) 123-4567" },
+                  {
+                    icon: Mail,
+                    title: t.home.contact.contactInfo.titleemail,
+                    value: t.home.contact.contactInfo.email,
+                  },
+                  {
+                    icon: Phone,
+                    title: t.home.contact.contactInfo.titlephone,
+                    value: t.home.contact.contactInfo.phone,
+                  },
                   {
                     icon: MapPin,
-                    title: "Location",
-                    value: "Creative District",
+                    title: t.home.contact.contactInfo.titlelocation,
+                    value: t.home.contact.contactInfo.location,
                   },
                 ].map((item, index) => (
-                  <GlassCard
+                  <div
                     key={index}
-                    className={`p-6 group hover:scale-105 transition-all duration-500 hover:shadow-xl${
-                      index ? ` delay-[${index * 100}ms]` : ""
-                    }`}
+                    className={`p-6 bg-white rounded-3xl shadow-md`}
                   >
-                    <div className="flex items-center space-x-4">
-                      <div className="w-14 h-14 bg-[#28bba4]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <item.icon className="h-6 w-6 text-[#28bba4] transition-colors duration-300" />
+                    <div
+                      className={`flex items-center ${
+                        language === "ar"
+                          ? "flex-row-reverse text-right space-x-reverse space-x-0 gap-4"
+                          : "flex-row text-left gap-4"
+                      }`}
+                    >
+                      {/* Icon */}
+                      <div className="w-14 h-14 bg-[#28bba4]/20 rounded-2xl flex items-center justify-center shrink-0">
+                        <item.icon className="h-6 w-6 text-[#28bba4]" />
                       </div>
-                      <div className="text-left">
-                        <p className="font-medium text-gray-900 mb-1 transition-all duration-300">
+
+                      {/* Text block */}
+                      <div className="flex flex-col w-full overflow-hidden">
+                        <p className="text-base font-semibold text-gray-900 leading-tight">
                           {item.title}
                         </p>
-                        <p className="text-gray-600 font-light transition-all duration-300 group-hover:text-gray-700">
+                        <p
+                          className={`text-sm text-gray-600 ${
+                            language === "ar" ? "text-right" : "text-left"
+                          } break-words whitespace-pre-line`}
+                        >
                           {item.value}
                         </p>
                       </div>
                     </div>
-                  </GlassCard>
+                  </div>
                 ))}
               </div>
 
-              {/* Enhanced Contact Form */}
-              <GlassCard className="p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl">
-                <form className="space-y-6">
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-[#28bba4] focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 font-light bg-white/70 backdrop-blur-sm hover:bg-white/90"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-[#28bba4] focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 font-light bg-white/70 backdrop-blur-sm hover:bg-white/90"
-                    />
-                  </div>
-                  <div>
-                    <textarea
-                      rows={5}
-                      placeholder="Tell me about your project..."
-                      className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-[#28bba4] focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 resize-none font-light bg-white/70 backdrop-blur-sm hover:bg-white/90"
-                    ></textarea>
-                  </div>
+              {/* Contact Form */}
+              <div>
+                <form className="bg-white rounded-3xl p-8 shadow-md space-y-6">
+                  <input
+                    type="text"
+                    placeholder={language === "ar" ? "اسمك" : "Your Name"}
+                    className={`w-full px-6 py-4 border border-gray-200 rounded-2xl bg-white/70 backdrop-blur-sm hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 font-light ${
+                      language === "ar" ? "text-right" : "text-left"
+                    }`}
+                  />
+                  <input
+                    type="email"
+                    placeholder={
+                      language === "ar" ? "بريدك الإلكتروني" : "Your Email"
+                    }
+                    className={`w-full px-6 py-4 border border-gray-200 rounded-2xl bg-white/70 backdrop-blur-sm hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 font-light ${
+                      language === "ar" ? "text-right" : "text-left"
+                    }`}
+                  />
+                  <textarea
+                    rows={5}
+                    placeholder={
+                      language === "ar"
+                        ? "أخبرنا عن مشروعك..."
+                        : "Tell me about your project..."
+                    }
+                    className={`w-full px-6 py-4 border border-gray-200 rounded-2xl bg-white/70 backdrop-blur-sm hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 resize-none font-light ${
+                      language === "ar" ? "text-right" : "text-left"
+                    }`}
+                  ></textarea>
+
                   <Button className="w-full bg-gradient-to-r from-[#28bba4] to-[#28bba4]/80 hover:from-[#28bba4]/90 hover:to-[#28bba4]/70 text-white py-4 rounded-2xl font-medium tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl group">
-                    <span className="flex items-center justify-center">
+                    <span className="flex items-center justify-center gap-2">
+                      {language === "ar" && (
+                        <ArrowRight className="rotate-180" />
+                      )}
                       {t.home.contact.form.button}
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                      {language !== "ar" && (
+                        <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" />
+                      )}
                     </span>
                   </Button>
                 </form>
-              </GlassCard>
+              </div>
             </div>
           </div>
         </div>

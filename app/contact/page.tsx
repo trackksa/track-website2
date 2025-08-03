@@ -49,15 +49,15 @@ export default function ContactPage() {
       });
       const data = await res.json();
       if (!res.ok) {
-        setError(data.error || "An error occurred. Please try again.");
+        setError(data.error || t.contact.getInTouch.form.errorfailed);
       } else {
         setSuccess(
-          "Your message has been successfully sent! We will contact you soon."
+          t.contact.getInTouch.form.errorsuccess
         );
         setFormData({ name: "", phone: "", email: "", message: "" });
       }
     } catch (err) {
-      setError("An error occurred. Please try again.");
+      setError(t.contact.getInTouch.form.errorfailed);
     } finally {
       setLoading(false);
     }
@@ -175,64 +175,74 @@ export default function ContactPage() {
             </div>
 
             {/* Right: Contact Form */}
-            <GlassCard className="p-8 hover:scale-105 h-[500px] transition-all duration-500 hover:shadow-2xl">
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                <input
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  type="text"
-                  placeholder={t.contact.getInTouch.form.namePlaceholder}
-                  className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-[#28bba4] focus:ring-[#28bba4]/20 focus:outline-none transition-all duration-300 bg-white/70 backdrop-blur-sm"
-                  required
-                />
-                <input
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  type="tel"
-                  placeholder="Phone"
-                  className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-[#28bba4] focus:ring-[#28bba4]/20 focus:outline-none transition-all duration-300 bg-white/70 backdrop-blur-sm"
-                  required
-                />
-                <input
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  type="email"
-                  placeholder={t.contact.getInTouch.form.emailPlaceholder}
-                  className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-[#28bba4] focus:ring-[#28bba4]/20 focus:outline-none transition-all duration-300 bg-white/70 backdrop-blur-sm"
-                  required
-                />
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  placeholder={t.contact.getInTouch.form.messagePlaceholder}
-                  className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-[#28bba4] focus:ring-[#28bba4]/20 focus:outline-none transition-all duration-300 bg-white/70 backdrop-blur-sm resize-none"
-                  required
-                ></textarea>
+            <div className="flex justify-center px-4">
+              <GlassCard className="w-full max-w-xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl">
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  <input
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    type="text"
+                    placeholder={t.contact.getInTouch.form.namePlaceholder}
+                    className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-[#28bba4] focus:ring-[#28bba4]/20 focus:outline-none transition-all duration-300 bg-white/70 backdrop-blur-sm"
+                    required
+                  />
+                  <input
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    type="tel"
+                    placeholder={t.contact.getInTouch.form.phonePlaceholder}
+                    className={`w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-[#28bba4] focus:ring-[#28bba4]/20 focus:outline-none transition-all duration-300 bg-white/70 backdrop-blur-sm${
+                      language === "ar" ? " text-right" : ""
+                    }`}
+                    dir={language === "ar" ? "rtl" : "ltr"}
+                    required
+                  />
+                  <input
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    type="email"
+                    placeholder={t.contact.getInTouch.form.emailPlaceholder}
+                    className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-[#28bba4] focus:ring-[#28bba4]/20 focus:outline-none transition-all duration-300 bg-white/70 backdrop-blur-sm"
+                    required
+                  />
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    placeholder={t.contact.getInTouch.form.messagePlaceholder}
+                    className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-[#28bba4] focus:ring-[#28bba4]/20 focus:outline-none transition-all duration-300 bg-white/70 backdrop-blur-sm resize-none"
+                    required
+                  ></textarea>
 
-                {error && (
-                  <div className="text-red-600 text-center">{error}</div>
-                )}
-                {success && (
-                  <div className="text-green-600 text-center">{success}</div>
-                )}
+                  <Button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-[#28bba4] to-[#28bba4]/80 hover:from-[#28bba4]/90 hover:to-[#28bba4]/70 text-white py-4 rounded-2xl font-medium tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl group"
+                    disabled={loading}
+                  >
+                    <span className="flex items-center justify-center">
+                      {loading
+                        ? "Sending..."
+                        : t.contact.getInTouch.form.button}
+                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Button>
 
-                <Button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-[#28bba4] to-[#28bba4]/80 hover:from-[#28bba4]/90 hover:to-[#28bba4]/70 text-white py-4 rounded-2xl font-medium tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl group"
-                  disabled={loading}
-                >
-                  <span className="flex items-center justify-center">
-                    {loading ? "Sending..." : t.contact.getInTouch.form.button}
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Button>
-              </form>
-            </GlassCard>
+                  {/* Error/Success Message Under Submit */}
+                  {error && (
+                    <div className="text-red-600 text-center mt-2">{error}</div>
+                  )}
+                  {success && (
+                    <div className="text-green-600 text-center mt-2">
+                      {success}
+                    </div>
+                  )}
+                </form>
+              </GlassCard>
+            </div>
           </div>
 
           {/* Map + Quick Contact */}

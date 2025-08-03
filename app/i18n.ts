@@ -88,9 +88,12 @@ export const content = {
       },
       form: {
         namePlaceholder: "Your Name",
+        phonePlaceholder: "Your Phone",
         emailPlaceholder: "Your Email",
         messagePlaceholder: "Tell me about your project...",
-        button: "Start Your Project"
+        button: "Send",
+        errorfailed: "An error occurred. Please try again.",
+        errorsuccess: "Your message has been successfully sent! We will contact you soon.",
       }
     }
   },
@@ -366,9 +369,12 @@ export const content = {
       },
       form: {
         namePlaceholder: "Your Name",
+        phonePlaceholder: "Your Phone",
         emailPlaceholder: "Your Email",
         messagePlaceholder: "Tell me about your project...",
-        button: "Send"
+        button: "Send",
+        errorfailed: "An error occurred. Please try again.",
+        errorsuccess: "Your message has been successfully sent! We will contact you soon.",
       }
     },
     socialMedia: {
@@ -520,9 +526,12 @@ export const content = {
       },
       form: {
         namePlaceholder: "اسمك",
+        phonePlaceholder: "رقم هاتفك",
         emailPlaceholder: "بريدك الإلكتروني",
         messagePlaceholder: "حدثنا عن مشروعك...",
-        button: "ابدأ مشروعك"
+        button: "ابدأ مشروعك",
+        errorfailed: "حدث خطأ. يُرجى المحاولة لاحقًا.",
+        errorsuccess: "تم إرسال رسالتك بنجاح! سنتواصل معك قريبًا.",
       }
     }
   },
@@ -793,9 +802,12 @@ export const content = {
       },
       form: {
         namePlaceholder: "اسمك",
+        phonePlaceholder: "رقم هاتفك",
         emailPlaceholder: "بريدك الإلكتروني",
         messagePlaceholder: "حدثنا عن مشروعك...",
-        button: "إرسال"
+        button: "إرسال",
+        errorfailed: "حدث خطأ. يُرجى المحاولة لاحقًا.",
+        errorsuccess: "تم إرسال رسالتك بنجاح! سنتواصل معك قريبًا.",
       }
     },
     socialMedia: {

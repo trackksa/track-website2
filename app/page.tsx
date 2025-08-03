@@ -117,6 +117,7 @@ export default function HomePage() {
     "/image.jpg",
   ];
 
+  // (Removed invalid import statement for React/useState inside component body)
   return (
     <div
       className={`min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30 ${
@@ -656,47 +657,164 @@ export default function HomePage() {
 
               {/* Contact Form */}
               <div>
-                <form className="bg-white rounded-3xl p-8 shadow-md space-y-6">
-                  <input
-                    type="text"
-                    placeholder={language === "ar" ? "اسمك" : "Your Name"}
-                    className={`w-full px-6 py-4 border border-gray-200 rounded-2xl bg-white/70 backdrop-blur-sm hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 font-light ${
-                      language === "ar" ? "text-right" : "text-left"
-                    }`}
-                  />
-                  <input
-                    type="email"
-                    placeholder={
-                      language === "ar" ? "بريدك الإلكتروني" : "Your Email"
-                    }
-                    className={`w-full px-6 py-4 border border-gray-200 rounded-2xl bg-white/70 backdrop-blur-sm hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 font-light ${
-                      language === "ar" ? "text-right" : "text-left"
-                    }`}
-                  />
-                  <textarea
-                    rows={5}
-                    placeholder={
-                      language === "ar"
-                        ? "أخبرنا عن مشروعك..."
-                        : "Tell me about your project..."
-                    }
-                    className={`w-full px-6 py-4 border border-gray-200 rounded-2xl bg-white/70 backdrop-blur-sm hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 resize-none font-light ${
-                      language === "ar" ? "text-right" : "text-left"
-                    }`}
-                  ></textarea>
+                {/* Contact form logic copied from contact/page.tsx for consistency */}
+                {(() => {
+                  const [formData, setFormData] = useState({
+                    name: "",
+                    phone: "",
+                    email: "",
+                    message: "",
+                  });
+                  const [loading, setLoading] = useState(false);
+                  const [error, setError] = useState<string | null>(null);
+                  const [success, setSuccess] = useState<string | null>(null);
 
-                  <Button className="w-full bg-gradient-to-r from-[#28bba4] to-[#28bba4]/80 hover:from-[#28bba4]/90 hover:to-[#28bba4]/70 text-white py-4 rounded-2xl font-medium tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl group">
-                    <span className="flex items-center justify-center gap-2">
-                      {language === "ar" && (
-                        <ArrowRight className="rotate-180" />
+                  const handleSubmit = async (e: React.FormEvent) => {
+                    e.preventDefault();
+                    setLoading(true);
+                    setError(null);
+                    setSuccess(null);
+                    try {
+                      const res = await fetch("/api/contact", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          name: formData.name,
+                          email: formData.email,
+                          message: formData.message,
+                          phone: formData.phone,
+                        }),
+                      });
+                      const data = await res.json();
+                      if (!res.ok) {
+                        setError(
+                          data.error || t.contact.getInTouch.form.errorfailed
+                        );
+                      } else {
+                        setSuccess(
+                          t.contact.getInTouch.form.errorsuccess
+                        );
+                        setFormData({
+                          name: "",
+                          phone: "",
+                          email: "",
+                          message: "",
+                        });
+                      }
+                    } catch (err) {
+                      setError(
+                        t.contact.getInTouch.form.errorfailed
+                      );
+                    } finally {
+                      setLoading(false);
+                    }
+                  };
+
+                  const handleChange = (
+                    e: React.ChangeEvent<
+                      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+                    >
+                  ) => {
+                    setFormData({
+                      ...formData,
+                      [e.target.name]: e.target.value,
+                    });
+                  };
+
+                  return (
+                    <form
+                      className="bg-white rounded-3xl p-8 shadow-md space-y-6"
+                      onSubmit={handleSubmit}
+                    >
+                      <input
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        type="text"
+                        placeholder={language === "ar" ? "اسمك" : "Your Name"}
+                        className={`w-full px-6 py-4 border border-gray-200 rounded-2xl bg-white/70 backdrop-blur-sm hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 font-light ${
+                          language === "ar" ? "text-right" : "text-left"
+                        }`}
+                        dir={language === "ar" ? "rtl" : "ltr"}
+                        required
+                      />
+                      <input
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        type="tel"
+                        placeholder={language === "ar" ? "رقم الجوال" : "Phone"}
+                        className={`w-full px-6 py-4 border border-gray-200 rounded-2xl bg-white/70 backdrop-blur-sm hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 font-light ${
+                          language === "ar" ? "text-right" : "text-left"
+                        }`}
+                        dir={language === "ar" ? "rtl" : "ltr"}
+                        required
+                      />
+                      <input
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        type="email"
+                        placeholder={
+                          language === "ar" ? "بريدك الإلكتروني" : "Your Email"
+                        }
+                        className={`w-full px-6 py-4 border border-gray-200 rounded-2xl bg-white/70 backdrop-blur-sm hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 font-light ${
+                          language === "ar" ? "text-right" : "text-left"
+                        }`}
+                        dir={language === "ar" ? "rtl" : "ltr"}
+                        required
+                      />
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows={5}
+                        placeholder={
+                          language === "ar"
+                            ? "أخبرنا عن مشروعك..."
+                            : "Tell me about your project..."
+                        }
+                        className={`w-full px-6 py-4 border border-gray-200 rounded-2xl bg-white/70 backdrop-blur-sm hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-[#28bba4]/20 transition-all duration-300 resize-none font-light ${
+                          language === "ar" ? "text-right" : "text-left"
+                        }`}
+                        dir={language === "ar" ? "rtl" : "ltr"}
+                        required
+                      ></textarea>
+
+                      <Button
+                        type="submit"
+                        className="w-full bg-gradient-to-r from-[#28bba4] to-[#28bba4]/80 hover:from-[#28bba4]/90 hover:to-[#28bba4]/70 text-white py-4 rounded-2xl font-medium tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl group"
+                        disabled={loading}
+                      >
+                        <span className="flex items-center justify-center gap-2">
+                          {language === "ar" && (
+                            <ArrowRight className="rotate-180" />
+                          )}
+                          {loading
+                            ? language === "ar"
+                              ? "جاري الإرسال..."
+                              : "Sending..."
+                            : t.home.contact.form.button}
+                          {language !== "ar" && (
+                            <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" />
+                          )}
+                        </span>
+                      </Button>
+
+                      {/* Error/Success Message Under Submit */}
+                      {error && (
+                        <div className="text-red-600 text-center mt-2">
+                          {error}
+                        </div>
                       )}
-                      {t.home.contact.form.button}
-                      {language !== "ar" && (
-                        <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" />
+                      {success && (
+                        <div className="text-green-600 text-center mt-2">
+                          {success}
+                        </div>
                       )}
-                    </span>
-                  </Button>
-                </form>
+                    </form>
+                  );
+                })()}
               </div>
             </div>
           </div>

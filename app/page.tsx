@@ -166,9 +166,8 @@ export default function HomePage() {
 
         <div className="container mx-auto px-4 text-center relative z-10 ">
           <div className="max-w-6xl mx-auto">
-            {/* Absolutely positioned WaveShowcase overlay */}
             <div
-              className="absolute left-0 right-0 max-sm:top-5 top-28 z-30 flex justify-center pointer-events-auto"
+              className="absolute left-0 right-0 max-sm:top-5 top-20 z-30 flex justify-center pointer-events-auto"
               style={{ width: "100%", height: "auto" }}
             >
               <WaveShowcase
@@ -177,48 +176,20 @@ export default function HomePage() {
               />
             </div>
 
-            {/* Enhanced Animated Badge */}
-            {/* <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-[#28bba4]/15 to-purple-500/15 backdrop-blur-2xl rounded-full px-8 py-3 border border-[#28bba4]/30 shadow-lg animate-pulse">
-              <div className="w-2 h-2 bg-[#28bba4] rounded-full animate-ping"></div>
-              <span className="text-gray-700 font-medium tracking-wide">{t.hero.badge}</span>
-              <div className="w-2 h-2 bg-purple-500 rounded-full animate-ping" style={{ animationDelay: "0.5s" }}></div>
-            </div> */}
+            {/* Logo image instead of title */}
+            <div className="flex justify-center mb-8 animate-in fade-in-0 slide-in-from-bottom-6 duration-1000 delay-200">
+              <Image
+                src="/track.png" 
+                alt="Track Logo"
+                width={250}
+                height={120}
+                className={`object-contain ${
+                  language === "ar" ? "max-sm:h-[60px]" : ""
+                }`}
+              />
+            </div>
 
-            {/* Revolutionary Title */}
-            <h1
-              className={`text-5xl md:text-7xl  font-extralight mb-8 tracking-tighter leading-none animate-in fade-in-0 slide-in-from-bottom-6 duration-1000 delay-200 inline-block bg-gradient-to-r from-gray-900 via-[#28bba4] to-[#28bba4] bg-clip-text text-transparent ${
-                language === "ar"
-                  ? "lg:text-8xl  max-sm:h-[60px] h-[120px]"
-                  : "lg:text-9xl"
-              }`}
-            >
-              {/* <span
-                className="inline-block bg-gradient-to-r from-gray-900 via-[#28bba4] to-[#28bba4] bg-clip-text text-transparent"
-                style={{
-                  backgroundSize: "300% 100%",
-                  animation: "gradient-shift 6s ease-in-out infinite, float 4s ease-in-out infinite",
-                }}
-              > */}
-              {t.home.hero.title}
-              {/* </span> */}
-            </h1>
-
-            {/* Subtitle */}
-            {/* <p
-              className="text-2xl md:text-3xl text-gray-600 font-light tracking-wide animate-pulse mb-[450px]"
-              style={{ animationDelay: "0.2s" }}
-            >
-              {t.hero.subtitle}
-            </p> */}
-
-            {/* Arabic Slogan with Special Effects */}
-            <p
-              className="text-xl md:text-2xl text-[#28bba4] max-sm:mb-[220px] mb-[420px] font-medium animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 delay-600"
-              // style={{
-              //   animation: "3s ease-in-out infinite, float 6s ease-in-out infinite",
-              //   textShadow: "0 0 20px rgba(40, 187, 164, 0.3)",
-              // }}
-            >
+            <p className="text-xl md:text-2xl text-[#28bba4] max-sm:mb-[220px] mb-[420px] font-medium animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 delay-600">
               {t.home.hero.slogan}
             </p>
 
@@ -226,27 +197,6 @@ export default function HomePage() {
             <p className="text-lg md:text-xl text-gray-600 mb-16 max-w-4xl mx-auto leading-relaxed font-light animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 delay-800">
               {t.home.hero.subtitle}
             </p>
-
-            {/* Enhanced CTA Buttons */}
-            {/* <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-[#28bba4] to-[#28bba4]/80 hover:from-[#28bba4]/90 hover:to-[#28bba4]/70 text-white px-12 py-5 rounded-full font-medium tracking-wide transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-[#28bba4]/25 group relative overflow-hidden"
-              >
-                <span className="relative z-10">{t.hero.cta}</span>
-                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform relative z-10" />
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </Button>
-
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-gray-300 text-gray-700 hover:border-[#28bba4] hover:text-[#28bba4] hover:bg-[#28bba4]/5 px-12 py-5 rounded-full font-medium tracking-wide transition-all duration-500 hover:scale-110 bg-white/70 backdrop-blur-sm group shadow-lg"
-              >
-                <Play className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
-                {t.hero.playDemo}
-              </Button>
-            </div> */}
 
             {/* Enhanced Scroll Hint */}
             <div className="flex flex-col items-center animate-bounce">
@@ -260,8 +210,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Rest of sections remain the same... */}
 
       {/* Enhanced About Section */}
       <section
@@ -691,9 +639,7 @@ export default function HomePage() {
                           data.error || t.contact.getInTouch.form.errorfailed
                         );
                       } else {
-                        setSuccess(
-                          t.contact.getInTouch.form.errorsuccess
-                        );
+                        setSuccess(t.contact.getInTouch.form.errorsuccess);
                         setFormData({
                           name: "",
                           phone: "",
@@ -702,9 +648,7 @@ export default function HomePage() {
                         });
                       }
                     } catch (err) {
-                      setError(
-                        t.contact.getInTouch.form.errorfailed
-                      );
+                      setError(t.contact.getInTouch.form.errorfailed);
                     } finally {
                       setLoading(false);
                     }

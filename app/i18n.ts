@@ -55,25 +55,26 @@ export const content = {
       title: "Client Testimonials",
       description: "What clients say about working with Track",
       items: [
-{
-          quote: "Track transformed our brand identity completely. We achieved an distinct and creative vision exceeded our expectations.",
-          name: "Sarah Johnson",
-          role: "CEO, Creative Studio",
-          rating: 5
-        },
-{
-          quote: "Working with Track was an incredible experience. The artistic vision and professional execution were outstanding.",
-          name: "Ahmed Al Rashid",
-          role: "Marketing Director",
-          rating: 5
-        },
-{
-          quote: "The stylistic process made by Track have become the cornerstone of our gallery. Truly exceptional work!",
-          name: "Maria Rodriguez",
-          role: "Gallery Owner",
-          rating: 5
-        }
-      ]
+  {
+    quote: "Track transformed our brand identity completely. The vision we achieved was unique and exceeded our expectations.",
+    name: "Laila Ali",
+    role: "Entrepreneur",
+    rating: 5
+  },
+  {
+    quote: "Working with Track was a wonderful experience. The artistic vision and professional execution were truly outstanding.",
+    name: "Ahmed Al Rashid",
+    role: "Marketing Specialist",
+    rating: 5
+  },
+  {
+    quote: "The artistic style delivered by Track has become the foundation of our gallery. Truly exceptional work!",
+    name: "Noura Al Salmi",
+    role: "Art Enthusiast",
+    rating: 5
+  }
+]
+
     },
     contact: {
       title: "Let's Create Together",
@@ -309,15 +310,15 @@ export const content = {
       subtitle: "What our clients say about our services",
       items: [
 {
-          name: "Ahmed Mohammed Al-Faisal",
-          position: "Marketing Manager – Riyadh Development Company",
+          name: "Ahmed  Al-Faisal",
+          position: "Marketing Manager",
           quote: "I have worked with Track on several projects and the results have always been amazing. A professional and creative team.",
           rating: 5,
           project: "Project: Integrated Advertising Campaign"
         },
 {
           name: "Fatima Al-Afi",
-          position: "Events Coordinator – Ministry of Culture",
+          position: "Events Coordinator",
           quote: "The best company I have dealt with in the field of event coverage. Punctuality and exceptional quality.",
           rating: 5,
           project: "Project: Cultural Festival Coverage"
@@ -493,25 +494,26 @@ export const content = {
       title: "آراء العملاء",
       description: "ماذا يقول العملاء عن العمل مع تراك",
       items: [
-{
-          quote: "تراك غيّرت هويتنا البصرية بالكامل. الرؤية التي حققناها كانت فريدة وتجاوزت توقعاتنا.",
-          name: "سارة جونسون",
-          role: "الرئيس التنفيذي، استوديو كرييتف",
-          rating: 5
-        },
-{
-          quote: "العمل مع تراك كان تجربة رائعة. الرؤية الفنية والتنفيذ الاحترافي كانا مميزين للغاية.",
-          name: "أحمد الراشد",
-          role: "مدير التسويق",
-          rating: 5
-        },
-{
-          quote: "الأسلوب الفني الذي قدمته تراك أصبح حجر الأساس في معرضنا. عمل استثنائي بكل معنى الكلمة!",
-          name: "ماريا رودريغيز",
-          role: "مالكة معرض",
-          rating: 5
-        }
-      ]
+  {
+    quote: "تراك غيّرت هويتنا البصرية بالكامل. الرؤية التي حققناها كانت فريدة وتجاوزت توقعاتنا.",
+    name: "ليلى علي",
+    role: "رائدة أعمال",
+    rating: 5
+  },
+  {
+    quote: "العمل مع تراك كان تجربة رائعة. الرؤية الفنية والتنفيذ الاحترافي كانا مميزين للغاية.",
+    name: "أحمد الراشد",
+    role: "خبير تسويق",
+    rating: 5
+  },
+  {
+    quote: "الأسلوب الفني الذي قدمته تراك أصبح حجر الأساس في معرضنا. عمل استثنائي بكل معنى الكلمة!",
+    name: "نورا السالمي",
+    role: "مهتمة بالفن",
+    rating: 5
+  }
+]
+
     },
     contact: {
       title: "لنبدع معًا",
@@ -748,15 +750,15 @@ export const content = {
       subtitle: "آراء العملاء في خدماتنا",
       items: [
 {
-          name: "أحمد محمد الفيصل",
-          position: "مدير تسويق – شركة تطوير الرياض",
+          name: "أحمد الفيصل",
+          position: "مدير تسويق",
           quote: "عملت مع تراك في عدة مشاريع، وكانت النتائج مذهلة دائمًا. فريق محترف ومبدع.",
           rating: 5,
           project: "حملة إعلانية متكاملة"
         },
 {
           name: "فاطمة العفيف",
-          position: "منسقة فعاليات – وزارة الثقافة",
+          position: "منسقة فعاليات",
           quote: "أفضل شركة تعاملت معها في تغطية الفعاليات. التزام بالمواعيد وجودة عالية.",
           rating: 5,
           project: "تغطية مهرجان ثقافي"

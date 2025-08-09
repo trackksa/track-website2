@@ -11,19 +11,20 @@ export const content = {
   home: {
     hero: {
       title: "Track",
-      subtitle: "A specialized company in audio and visual content production, committed to delivering exceptional quality through a team of seasoned experts and industry professionals.",
+      subtitle: "A leading company with specialized experts..",
       cta: "Discover Now",
       slogan: "All tracks lead to us"
     },
     discover: {
       title: "Discover Track",
-      description: "Passionate about creating meaningful visual experiences",
-            stats: [
-        { number: "150+", label: "Projects Completed" },
-        { number: "50+", label: "Happy Clients" },
-        { number: "15", label: "Awards Won" },
-        { number: "8", label: "Years Experience" },
-      ],
+      description: "It's not just the years… it's the expertise that made us the best and most distinguished.",
+stats: [
+  { number: "1000+", label: "Completed Projects" },
+  { number: "200+", label: "Satisfied Clients" },
+  { number: "100+", label: "Plans & Ideas for the Future" },
+  { number: "10+", label: "Years of Experience" },
+],
+
       about: "With over a decade of experience in digital artistry, I specialize in creating visually captivating experiences that resonate with audiences worldwide."
     },
     services: {
@@ -153,27 +154,21 @@ export const content = {
       details: [
 {
           name: "Wedding Photography",
-          price: "From $1333"
         },
 {
           name: "Conferences & Seminars",
-          price: "From $800"
         },
 {
           name: "Sports Events",
-          price: "From $1066"
         },
 {
           name: "Music Concerts",
-          price: "From $1600"
         },
 {
           name: "Trade Shows",
-          price: "From $666"
         },
 {
           name: "Government Events",
-          price: "Upon Request"
         }
       ]
     },
@@ -196,27 +191,21 @@ export const content = {
       details: [
 {
           name: "Song Recording",
-          price: "From $533"
         },
 {
           name: "Shilat Production",
-          price: "From $400"
         },
 {
           name: "Religious Anasheed",
-          price: "From $480"
         },
 {
           name: "Wedding Songs",
-          price: "From $666"
         },
 {
           name: "Operettas",
-          price: "From $1333"
         },
 {
           name: "Voice Over",
-          price: "From $133"
         }
       ]
     },
@@ -239,27 +228,21 @@ export const content = {
       details: [
 {
           name: "TV Commercials",
-          price: "From $2133"
         },
 {
           name: "Short Films",
-          price: "From $4000"
         },
 {
           name: "Digital Content",
-          price: "From $266"
         },
 {
           name: "Motion Graphics",
-          price: "From $800"
         },
 {
           name: "Documentaries",
-          price: "From $5333"
         },
 {
           name: "Educational Videos",
-          price: "From $533"
         }
       ]
     },
@@ -408,7 +391,7 @@ export const content = {
   },
   footer: {
   companyName: "Track",
-  description: "A specialized company in audio and visual content production, committed to delivering exceptional quality through a team of seasoned experts and industry professionals.",
+  description: "A leading company with specialized experts..",
   contact: {
     email: "info@trackksa.com",
     phone: "+966556611173",
@@ -442,20 +425,20 @@ export const content = {
    home: {
     hero: {
       title: "تراك",
-      subtitle: "شركة متخصصة في إنتاج المحتوى المرئي والمسموع بمعايير احترافية من خبراء وتخصصين في المجال الفني.",
+      subtitle: "شركة رائدة وخبراء متخصصين.",
       cta: "اكتشف الآن",
       slogan: "كل المسارات تؤدي إلينا"
     },
     discover: {
       title: "اكتشف تراك",
-      description: "شغوفون بصناعة تجارب بصرية ذات معنى",
+      description: "ليست السنوات فقط.. بل الخبرات من جعلتنا الأفضل والأكثر تميزاً",
       stats: [
-        { number: "150+", label: "مشروع مكتمل" },
-        { number: "50+", label: "عميل سعيد" },
-        { number: "15", label: "جائزة" },
-        { number: "8", label: "سنوات خبرة" },
+        { number: "1000+", label: "مشروع مكتمل" },
+        { number: "200+", label: "عميل راضٍ" },
+        { number: "100+", label: "خطة وفكرة للمستقبل" },
+        { number: "10+", label: "سنوات خبرة" },
       ],
-      about: "شركة رائدة في مجال الإنتاج الصوتي والمرئي وفق أعلى المعايير الفنية، وبكل حرفية ومهنية."
+      about: "صنعنا البهجة لأكثر من 200 عميل في أكثر من 1000 عمل خلال عقد واحد."
     },
     services: {
       title: "الخدمات",
@@ -593,27 +576,21 @@ export const content = {
       details: [
 {
           name: "تصوير حفلات الزفاف",
-          price: "ابتداءً من $1333"
         },
 {
           name: "المؤتمرات والندوات",
-          price: "ابتداءً من $800"
         },
 {
           name: "الفعاليات الرياضية",
-          price: "ابتداءً من $1066"
         },
 {
           name: "الحفلات الموسيقية",
-          price: "ابتداءً من $1600"
         },
 {
           name: "المعارض التجارية",
-          price: "ابتداءً من $666"
         },
 {
           name: "الفعاليات الحكومية",
-          price: "حسب الطلب"
         }
       ]
     },
@@ -636,27 +613,21 @@ export const content = {
       details: [
 {
           name: "تسجيل الأغاني",
-          price: "ابتداءً من $533"
         },
 {
           name: "إنتاج الشيلات",
-          price: "ابتداءً من $400"
         },
 {
           name: "إنتاج الأناشيد",
-          price: "ابتداءً من $480"
         },
 {
           name: "أغاني الزفاف",
-          price: "ابتداءً من $666"
         },
 {
           name: "الأوبريتات",
-          price: "ابتداءً من $1333"
         },
 {
           name: "التعليق الصوتي",
-          price: "ابتداءً من $133"
         }
       ]
     },
@@ -679,27 +650,21 @@ export const content = {
       details: [
 {
           name: "الإعلانات التلفزيونية",
-          price: "ابتداءً من $2133"
         },
 {
           name: "الأفلام القصيرة",
-          price: "ابتداءً من $4000"
         },
 {
           name: "المحتوى الرقمي",
-          price: "ابتداءً من $266"
         },
 {
           name: "الرسوم المتحركة",
-          price: "ابتداءً من $800"
         },
 {
           name: "الأفلام الوثائقية",
-          price: "ابتداءً من $5333"
         },
 {
           name: "الفيديوهات التعليمية",
-          price: "ابتداءً من $533"
         }
       ]
     },
@@ -842,7 +807,7 @@ export const content = {
   },
   footer: {
   companyName: "تراك",
-  description: "شركة متخصصة في إنتاج المحتوى المرئي والمسموع بمعايير احترافية من خبراء وتخصصين في المجال الفني.",
+  description: "شركة رائدة وخبراء متخصصين.",
   contact: {
     email: "info@trackksa.com",
     phone: "+966556611173",

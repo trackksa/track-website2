@@ -80,7 +80,6 @@ export default function ServicesPage() {
         name: detail.name,
         icon: [Heart, Users, Target, Music, Monitor, Award][i] || Heart,
         description: "", // Add localization if available
-        price: detail.price,
       })),
     },
     {
@@ -96,7 +95,6 @@ export default function ServicesPage() {
         name: detail.name,
         icon: [Mic, Volume2, Heart, Music, Users, Radio][i] || Mic,
         description: "", // Add localization if available
-        price: detail.price,
       })),
     },
     {
@@ -112,7 +110,6 @@ export default function ServicesPage() {
         name: detail.name,
         icon: [Tv, Film, Smartphone, Layers, FileVideo, Monitor][i] || Tv,
         description: "", // Add localization if available
-        price: detail.price,
       })),
     },
   ];
@@ -341,14 +338,7 @@ export default function ServicesPage() {
                       <p className="text-gray-600 text-sm mb-4 text-left leading-relaxed">
                         {subService.description}
                       </p>
-                      <div className="flex items-center justify-between">
-                        <span
-                          className="font-bold text-lg"
-                          style={{ color: mainServices[activeTab].color }}
-                        >
-                          {subService.price}
-                        </span>
-                      </div>
+                      {/* Removed price display */}
                     </CardContent>
                   </Card>
                 );

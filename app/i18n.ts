@@ -11,7 +11,7 @@ export const content = {
   home: {
     hero: {
       title: "Track",
-      subtitle: "A leading company with specialized experts..",
+      subtitle: "A leading company with specialized experts.",
       cta: "Discover Now",
       slogan: "All tracks lead to us"
     },

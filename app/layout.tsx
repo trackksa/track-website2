@@ -23,7 +23,7 @@ export const metadata: Metadata ={
     other: [
       {
         rel: 'mask-icon',
-        url: '/safari-pinned-tab.svg',
+        url: '/icon0.svg',
         color: '#000000'
       }
     ]
@@ -32,16 +32,12 @@ export const metadata: Metadata ={
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'Alogza'
+    title: 'Track',
   },
-  applicationName: 'Alogza',
+  applicationName: 'Track',
   formatDetection: {
     telephone: false
   },
-  twitter:{
-    card:"summary_large_image",
-    images: ['/icon.png']
-  }
 }
 
 export default function RootLayout({

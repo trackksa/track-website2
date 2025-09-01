@@ -20,9 +20,6 @@ import HeroSections from "@/components/heading";
 import { content } from "@/app/i18n";
 import { useLanguage } from "@/app/context/LanguageContext";
 
-
-
-
 // Define the Project type for better type safety
 type Project = {
   id: number;
@@ -340,7 +337,7 @@ export default function PortfolioPage() {
                     <Camera size={20} className="text-[#28bca2]" />
                     Photos
                   </h3>
-                  <div className="grid md:grid-cols-2 gap-4 w-full max-w-3xl justify-center">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full px-2">
                     {selectedProject.images
                       .filter(
                         (img) =>
@@ -350,13 +347,13 @@ export default function PortfolioPage() {
                       .map((image, index) => (
                         <div
                           key={index}
-                          className="relative h-64 rounded-xl overflow-hidden flex justify-center items-center"
+                          className="relative w-full h-48 sm:h-56 md:h-64 rounded-xl overflow-hidden flex justify-center items-center"
                         >
                           <Image
                             src={image || "/placeholder.svg"}
                             alt={`${selectedProject.title} ${index + 1}`}
                             fill
-                            className="object-cover border-4 border-gray-200 rounded-2xl shadow-sm"
+                            className="object-cover border border-gray-200 rounded-2xl shadow-sm"
                           />
                         </div>
                       ))}
@@ -397,7 +394,7 @@ export default function PortfolioPage() {
                     <Music size={20} className="text-[#28bca2]" />
                     Audios
                   </h3>
-                  <div className="grid md:grid-cols-2 gap-4 w-full max-w-3xl justify-center">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full px-2">
                     {selectedProject.images
                       .filter((img) =>
                         img.match(/\.(mp3|wav|ogg|m4a|aac|flac|webm|oga)$/i)
@@ -405,10 +402,10 @@ export default function PortfolioPage() {
                       .map((audio, idx) => (
                         <div
                           key={idx}
-                          className="flex flex-col items-center justify-center h-64 bg-gray-50 border-4 border-gray-200 rounded-2xl shadow-sm"
+                          className="flex flex-col items-center justify-center h-48 sm:h-56 md:h-64 bg-gray-50 border border-gray-200 rounded-2xl shadow-sm p-4"
                         >
-                          <Music size={48} className="text-[#28bca2] mb-4" />
-                          <audio controls className="w-full max-w-xs">
+                          <Music size={40} className="text-[#28bca2] mb-3" />
+                          <audio controls className="w-full">
                             <source src={audio} />
                             Your browser does not support the audio element.
                           </audio>
